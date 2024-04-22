@@ -1,0 +1,6 @@
+
+MAX_WIDTH = 600
+MAX_HEIGHT = 600
+
+ROWS = 8
+COLS = 8

@@ -1,0 +1,72 @@
+@startuml
+
+class Const{
+    WIDTH:Integer
+    HEIGHT:Integer 
+    ROWS:Integer
+    COLS:Integer
+}
+
+class Main{
+   screen: pygame 
+   mainloop()
+}
+
+class Game{
+   gameMode:String 
+   showBoard()
+   showPieces()
+   showMoves()
+   showLastMove()
+   nextTurn()
+   reset()
+}
+
+class Board{
+    void create()
+    void addPieces()
+}
+
+class Square{
+    row: Integer 
+    col: Integer 
+    hasPieces()
+    isEmpty()
+}
+
+abstract class Piece{
+    name: String 
+    color: String 
+    value: Integer 
+    moved: Boolean
+
+    addMove()
+}
+
+class move{}
+
+class Pawn{
+    canPasant():Boolean
+}
+class Knight{}
+class Bishop{}
+class Rock{}
+class Queen{}
+class King{}
+
+Main --|> Game 
+Game --> Board 
+Board --> Square 
+Square --> Piece 
+Piece --> Pawn 
+Piece --> Knight 
+Piece --> Bishop 
+Piece --> Rock 
+Piece --> Queen
+Piece --> King 
+
+Board --> move 
+Piece --> move 
+
+
+@enduml

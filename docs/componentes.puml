@@ -1,0 +1,42 @@
+@startuml
+
+[Interfaz Usuario]
+[Logica de la App]
+[Motor de Ajedrez]
+[Gestion de datos]
+
+note right of [Interfaz Usuario]
+    - Mostrar lista de libros de ajedrez 
+    - Visualizar detalles de un libro 
+    - Mostrar tablero de ajedrez 
+    - Controlar la reproducción de partidas 
+    - Mostrar análisis de Stockfish 
+    - Interactuar con controles de navegación 
+    - Gestionar configuración de usuario 
+end note 
+
+note left of [Logica de la App]
+    - Cargar libros de ajedrez desde almacenamiento 
+    - Gestionar libros de ajedrez (agregar, eliminar, actualizar) 
+    - Gestionar partidas de ajedrez (guardar, cargar, eliminar) 
+    - Controlar reproducción de partidas 
+    - Integrar con Stockfish para análisis de partidas 
+    - Interpretar y aplicar reglas del juego de ajedrez 
+    - Generar movimientos legales
+end note
+
+note right of [Motor de Ajedrez]
+    - Intercambiar información con Stockfish 
+    - Ejecutar análisis de partidas 
+    - Generar movimientos sugeridos 
+end note
+
+note left of [Gestion de datos]
+    - Almacenar libros de ajedrez 
+    - Almacenar partidas de ajedrez 
+    - Almacenar configuración de usuario
+end note
+[Interfaz Usuario]..> [Logica de la App]
+[Logica de la App]..> [Motor de Ajedrez]
+[Motor de Ajedrez]..> [Gestion de datos]
+@enduml
