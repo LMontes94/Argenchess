@@ -1,30 +1,29 @@
-import pygame
 from const import *
+import sys 
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
 
+class Argenchess(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.iniciar_app()
 
-class App():
-    def __init__(self) -> None:
-        self.MAX_WIDTH = MAX_WIDTH
-        self.MAX_HEIGHT = MAX_HEIGHT
+    def iniciar_app(self):
+        self.setGeometry(100,100,MAX_HEIGHT,MAX_WIDTH)
+        self.setWindowTitle("Argenchess")
 
-    def start(self):
-        pygame.init()
-        screen = pygame.display.set_mode((MAX_WIDTH, MAX_HEIGHT))
-        clock = pygame.time.Clock()
-        running = True
+        icon_path = 'horse.png'
+        self.setWindowIcon(QIcon(icon_path))
+        self.generar_menu()
+        self.show()
 
-        while running:
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
+    def generar_menu(self):
+        frame_argenchess = QFrame()
+        frame_argenchess.setGeometry(190,80,271,311)
+        frame_argenchess.setStyleSheet()
 
-            screen.fill("#B9D5EF")
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
 
-            pygame.display.flip()
-            clock.tick(60)
-
-        pygame.quit()
-
-
-main = App()
-main.start()
+    argenchess = Argenchess()
+    sys.exit(app.exec()) 
